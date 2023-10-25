@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../static/normalize.css" />
+    <link rel="stylesheet" href="../../static/styles.css" />
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <div class="homepage-btn">
+        <a href="{{url_for('homeBP.index')}}"
+          ><p>
+            <img src="../../static/home/images/home-icon.png" alt="Home icon" />Homepage
+          </p></a
+        >
+    </div>
+    <div class="homepage-btn-mobile">
+      <a href="{{url_for('homeBP.index')}}">
+        <p>
+          <img src="../../static/home/images/home-icon.png" alt="Home icon"/>
+        </p>
+      </a>
+    </div>
+    {% block content %}
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+          <p class="{{ category }}">{{ msg }}</p>
+        {% endfor %}
+      {% endwith %}
+
+      <div class="adminLogin">
+        <h1>Admin Login</h1>
+
+        <form action="#" method="post">
+
+          {{ form.hidden_tag() }}
+
+          <!-- Password -->
+          {% if form.password.errors %}
+            {% for error in form.password.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.password.label }} <br> <br>
+          {{ form.password(placeholder="Admin password") }}
+
+          <!-- submit -->
+          {{ form.submit }}
+          
+        </form>
+
+      </div>
+
+    {% endblock %}
+        
+  </body>
+</html>

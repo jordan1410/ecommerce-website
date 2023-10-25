@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../static/normalize.css" />
+    <link rel="stylesheet" href="../../static/styles.css" />
+    <title>Completed Orders</title>
+  </head>
+  <body>
+    <div class="adminHome-btn">
+      <a href="{{url_for('adminBP.adminHome')}}"
+        ><p>Admin Homepage</p></a>
+    </div>
+    <h1 class="adminOrder-header">Completed Orders</h1>
+    <ul class="adminOrder-collapse">
+        {% block content %} 
+          {% for response in completedOrders %}
+            {% if response.status == "completed" %}
+              {% if response.formType == "Phob" %}
+              <!-- Phob order -->
+              <li>
+                <input type="checkbox" name="adminOrder-collapse" id="{{response}}"> 
+                <label for="{{response}}">{{response.formType}} Order </label>
+                <div class="collapseContent">
+                  <hr>
+                  <div class="adminOrder-grid">
+                    <div class="adminOrder-tl">
+                      <p>
+                        Order Date - {{response.date}}<br />
+                        Use Case - {{response.useCase}}<br />
+                        Front Shell - {{response.frontShell}}, {{response.frontShellQual}}<br />
+                        Back Shell - {{response.backShell}}, {{response.backShellQual}}<br />
+                        Button/Trigger/Stick Color - {{response.btnTrigStickColor}}<br />
+                        Cord - {{response.cord}}<br />
+                        Cord Plug Color - {{response.cordPlugColor}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-tr">
+                      <p>
+                        Motherboard - {{response.motherboard}}<br />
+                        Trigger Potentiometers - {{response.trigPotent}}<br />
+                        Rubmle Modicifation - {{response.rumbleMod}}<br />
+                        Notches - {{response.notches}}<br />
+                        Gray Stickbox - {{response.grayStickbox}}<br />
+                        C Stickbox - {{response.cStickbox}}<br />
+                        Gray Stick Cap - {{response.grayStickCap}}<br />
+                        C Stick Cap - {{response.cStickCap}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-ml">
+                      <p>
+                        <span class="bold">Button Mods:</span><br>
+                        {% if response.baldBtns != "" %} 
+                          Bald Buttons<br />
+                        {% endif %}
+                        {% if response.mouseClickABXY != "" %}
+                          Mouse Click ABXY<br />
+                        {% endif %}
+                        {% if response.zRemapX != "" %}
+                          Z Remap X<br />
+                        {% endif %}
+                        {% if response.zRemapY != "" %}
+                          Z Remap Y<br />
+                        {% endif %}
+                        {% if response.oemZ != "" %}
+                          OEM Z<br />
+                        {% endif %}
+                        {% if response.tactileZ != "" %}
+                          Tactile Z<br />
+                        {% endif %}
+                        {% if response.stabilizedBtns != "" %}
+                          Stabilized Buttons<br />
+                        {% endif %}
+                        {% if response.btnNone != "" %}
+                          No Buttoms Mods<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-mr">
+                      <p>
+                        <span class="bold">Trigger Mods:</span><br>
+                        {% if response.mouseClickTrig != "" %}
+                          Mouse Click Trigger - {{response.mouseClickTrig}}<br />
+                        {% endif %}
+                        {% if response.digTrigUltimate != "" %}
+                          Digital Trigger Ultimate - {{response.digTrigUltimate}}<br />
+                        {% endif %}
+                        {% if response.shortPlug != "" %}
+                          Short Plug - {{response.shortPlug}}<br />
+                        {% endif %}
+                        {% if response.longPlug != "" %}
+                          Long Plug - {{response.longPlug}}<br />
+                        {% endif %}
+                        {% if response.stabilizedTrigs != "" %}
+                          Stabilized Triggers - {{response.stabilizedTrigs}}<br />
+                        {% endif %}
+                        {% if response.shortenedSpring != "" %}
+                          Shortened Spring - {{response.shortenedSpring}}<br />
+                        {% endif %}
+                        {% if response.removedSpring != "" %}
+                          Removed Spring - {{response.removedSpring}}<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-bl">
+                      <p>
+                        <span class="bold">Upgrades:</span><br>
+                        {% if response.fnT3Bundle != "" %}
+                          Factory New T3 Bundle<br />
+                        {% endif %}
+                        {% if response.fnLowFricTrigPotent != "" %}
+                          Factory New Low Friction Trigger Potentiometers<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPads != "" %}
+                          Factory New T3 Button Trigger Pads<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPieces != "" %}
+                          Factory New T3 Button Trigger Pieces<br />
+                        {% endif %}
+                        {% if response.upgradeNone != "" %}
+                          No Upgrades<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-br">
+                      <p>
+                        <span class="bold">Shipping Information:</span><br>
+                        Handle - {{response.handle}}<br />
+                        Queue - {{response.queueSkip}}<br />
+                        {{response.firstLastName}}<br />
+                        {{response.streetAddress}}, {{response.city}}, {{response.state}} {{response.zipCode}} {{response.country}}<br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+              {% if response.formType == "OEM" %}
+              <!-- OEM order -->
+              <li>
+                <input type="checkbox" name="adminOrder-collapse" id="{{response}}"> 
+                <label for="{{response}}">{{response.formType}} Order</label>
+                <div class="collapseContent">
+                  <hr>
+                  <div class="adminOrder-grid">
+                    <div class="adminOrder-tl">
+                      <p>
+                        Order Date - {{response.date}}<br />
+                        Use Case - {{response.useCase}}<br />
+                        Front Shell - {{response.frontShell}}, {{response.frontShellQual}}<br />
+                        Back Shell - {{response.backShell}}, {{response.backShellQual}}<br />
+                        Button/Trigger/Stick Color - {{response.btnTrigStickColor}}<br />
+                        Cord - {{response.cord}}<br />
+                        Cord Plug Color - {{response.cordPlugColor}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-tr">
+                      <p>
+                        Motherboard - {{response.motherboard}}<br />
+                        Trigger Potentiometers - {{response.trigPotent}}<br />
+                        Rubmle Modicifation - {{response.rumbleMod}}<br />
+                        Notches - {{response.notches}}<br />
+                        Gray Stickbox - {{response.grayStickbox}}<br />
+                        C Stickbox - {{response.cStickbox}}<br />
+                        Gray Stick Cap - {{response.grayStickCap}}<br />
+                        C Stick Cap - {{response.cStickCap}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-ml">
+                      <p>
+                        <span class="bold">Button Mods:</span><br>
+                        {% if response.baldBtns != "" %} 
+                          Bald Buttons<br />
+                        {% endif %}
+                        {% if response.zRemapX != "" %}
+                          Z Remap X<br />
+                        {% endif %}
+                        {% if response.zRemapY != "" %}
+                          Z Remap Y<br />
+                        {% endif %}
+                        {% if response.tactileZ != "" %}
+                          Tactile Z<br />
+                        {% endif %}
+                        {% if response.stabilizedBtns != "" %}
+                          Stabilized Buttons<br />
+                        {% endif %}
+                        {% if response.btnNone != "" %}
+                          No Buttoms Mods<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-mr">
+                      <p>
+                        <span class="bold">Trigger Mods:</span><br>
+                        {% if response.digTrigUltimateMelee != "" %}
+                          Digital Trigger Ultimate + Melee - {{response.digTrigUltimateMelee}}<br />
+                        {% endif %}
+                        {% if response.digTrigUltimate != "" %}
+                          Digital Trigger Ultimate - {{response.digTrigUltimate}}<br />
+                        {% endif %}
+                        {% if response.shortPlug != "" %}
+                          Short Plug - {{response.shortPlug}}<br />
+                        {% endif %}
+                        {% if response.longPlug != "" %}
+                          Long Plug - {{response.longPlug}}<br />
+                        {% endif %}
+                        {% if response.stabilizedTrigs != "" %}
+                          Stabilized Triggers - {{response.stabilizedTrigs}}<br />
+                        {% endif %}
+                        {% if response.shortenedSpring != "" %}
+                          Shortened Spring - {{response.shortenedSpring}}<br />
+                        {% endif %}
+                        {% if response.removedSpring != "" %}
+                          Removed Spring - {{response.removedSpring}}<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-bl">
+                      <p>
+                        <span class="bold">Upgrades:</span><br>
+                        {% if response.fnT3Bundle != "" %}
+                          Factory New T3 Bundle<br />
+                        {% endif %}
+                        {% if response.fnLowFricTrigPotent != "" %}
+                          Factory New Low Friction Trigger Potentiometers<br />
+                        {% endif %}
+                        {% if response.fnT3Motherboard != "" %}
+                          Factory New T3 Motherboard<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPads != "" %}
+                          Factory New T3 Button Trigger Pads<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPieces != "" %}
+                          Factory New T3 Button Trigger Pieces<br />
+                        {% endif %}
+                        {% if response.upgradeNone != "" %}
+                          No Upgrades<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-br">
+                      <p>
+                        <span class="bold">Shipping Information:</span><br>
+                        Handle - {{response.handle}}<br />
+                        Queue - {{response.queueSkip}}<br />
+                        {{response.firstLastName}}<br />
+                        {{response.streetAddress}}, {{response.city}}, {{response.state}} {{response.zipCode}} {{response.country}}<br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+              {% if response.formType == "99" %}
+              <!-- 99 order -->
+              <li>
+                <input type="checkbox" name="adminOrder-collapse" id="{{response}}"> 
+                <label for="{{response}}">${{response.formType}} Order </label>
+                <div class="collapseContent">
+                  <hr>
+                  <div class="adminOrder-grid">
+                    <div class="adminOrder-tl">
+                      <p>
+                        Order Date - {{response.date}}<br />
+                        Use Case - {{response.useCase}}<br />
+                        Color - {{response.color}}<br />
+                        Button/Trigger/Stick Color - {{response.btnTrigStickColor}}<br />
+                        Cord - {{response.cord}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-tr">
+                      <p>
+                        Trigger Potentiometers - {{response.trigPotent}}<br />
+                        Rubmle Modicifation - {{response.rumbleMod}}<br />
+                        Notches - {{response.notches}}<br />
+                        Gray Stickbox Upgrade - {{response.grayStickbox}}<br />
+                        C Stickbox Upgrade - {{response.cStickbox}}<br />
+                        Gray Stick Cap Upgrade - {{response.grayStickCap}}<br />
+                        C Stick Cap Upgrade - {{response.cStickCap}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-ml">
+                      <p>
+                        <span class="bold">Button Mods:</span><br>
+                        {% if response.baldBtns != "" %} 
+                          Bald Buttons<br />
+                        {% endif %}
+                        {% if response.zRemapX != "" %}
+                          Z Remap X<br />
+                        {% endif %}
+                        {% if response.zRemapY != "" %}
+                          Z Remap Y<br />
+                        {% endif %}
+                        {% if response.tactileZ != "" %}
+                          Tactile Z<br />
+                        {% endif %}
+                        {% if response.stabilizedBtns != "" %}
+                          Stabilized Buttons<br />
+                        {% endif %}
+                        {% if response.btnNone != "" %}
+                          No Buttoms Mods<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-mr">
+                      <p>
+                        <span class="bold">Trigger Mods:</span><br>
+                        {% if response.digTrigUltimateMelee != "" %}
+                          Digital Trigger Ultimate + Melee - {{response.digTrigUltimateMelee}}<br />
+                        {% endif %}
+                        {% if response.digTrigUltimate != "" %}
+                          Digital Trigger Ultimate - {{response.digTrigUltimate}}<br />
+                        {% endif %}
+                        {% if response.shortPlug != "" %}
+                          Short Plug - {{response.shortPlug}}<br />
+                        {% endif %}
+                        {% if response.longPlug != "" %}
+                          Long Plug - {{response.longPlug}}<br />
+                        {% endif %}
+                        {% if response.stabilizedTrigs != "" %}
+                          Stabilized Triggers - {{response.stabilizedTrigs}}<br />
+                        {% endif %}
+                        {% if response.shortenedSpring != "" %}
+                          Shortened Spring - {{response.shortenedSpring}}<br />
+                        {% endif %}
+                        {% if response.removedSpring != "" %}
+                          Removed Spring - {{response.removedSpring}}<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-bl">
+                      <p>
+                        <span class="bold">Upgrades:</span><br>
+                        {% if response.fnT3Bundle != "" %}
+                          Factory New T3 Bundle<br />
+                        {% endif %}
+                        {% if response.fnLowFricTrigPotent != "" %}
+                          Factory New Low Friction Trigger Potentiometers<br />
+                        {% endif %}
+                        {% if response.fnT3Motherboard != "" %}
+                          Factory New T3 Motherboard<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPads != "" %}
+                          Factory New T3 Button Trigger Pads<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPieces != "" %}
+                          Factory New T3 Button Trigger Pieces<br />
+                        {% endif %}
+                        {% if response.upgradeNone != "" %}
+                          No Upgrades<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-br">
+                      <p>
+                        <span class="bold">Shipping Information:</span><br>
+                        Handle - {{response.handle}}<br />
+                        Queue - {{response.queueSkip}}<br />
+                        {{response.firstLastName}}<br />
+                        {{response.streetAddress}}, {{response.city}}, {{response.state}} {{response.zipCode}} {{response.country}}<br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+              {% if response.formType == "169" %}
+              <!-- 169 order -->
+              <li>
+                <input type="checkbox" name="adminOrder-collapse" id="{{response}}"> 
+                <label for="{{response}}">${{response.formType}} Order</label>
+                <div class="collapseContent">
+                  <hr>
+                  <div class="adminOrder-grid">
+                    <div class="adminOrder-tl">
+                      <p>
+                        Order Date - {{response.date}}<br />
+                        Use Case - {{response.useCase}}<br />
+                        Button/Trigger/Stick Color - {{response.btnTrigStickColor}}<br />
+                        Cord - {{response.cord}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-tr">
+                      <p>
+                        Trigger Potentiometers - {{response.trigPotent}}<br />
+                        Rubmle Modicifation - {{response.rumbleMod}}<br />
+                        Notches - {{response.notches}}<br />
+                        Gray Stickbox Upgrade - {{response.grayStickbox}}<br />
+                        C Stickbox Upgrade - {{response.cStickbox}}<br />
+                        Gray Stick Cap Upgrade - {{response.grayStickCap}}<br />
+                        C Stick Cap Upgrade - {{response.cStickCap}}<br />
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-ml">
+                      <p>
+                        <span class="bold">Button Mods:</span><br>
+                        {% if response.baldBtns != "" %} 
+                          Bald Buttons<br />
+                        {% endif %}
+                        {% if response.mouseClickABXY != "" %}
+                          Mouse Click ABXY<br />
+                        {% endif %}
+                        {% if response.zRemapX != "" %}
+                          Z Remap X<br />
+                        {% endif %}
+                        {% if response.zRemapY != "" %}
+                          Z Remap Y<br />
+                        {% endif %}
+                        {% if response.stabilizedBtns != "" %}
+                          Stabilized Buttons<br />
+                        {% endif %}
+                        {% if response.btnNone != "" %}
+                          No Buttoms Mods<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-mr">
+                      <p>
+                        <span class="bold">Trigger Mods:</span><br>
+                        {% if response.mouseClickTrig != "" %}
+                          Mouse Click Trigger - {{response.mouseClickTrig}}<br />
+                        {% endif %}
+                        {% if response.digTrigUltimate != "" %}
+                          Digital Trigger Ultimate - {{response.digTrigUltimate}}<br />
+                        {% endif %}
+                        {% if response.shortPlug != "" %}
+                          Short Plug - {{response.shortPlug}}<br />
+                        {% endif %}
+                        {% if response.longPlug != "" %}
+                          Long Plug - {{response.longPlug}}<br />
+                        {% endif %}
+                        {% if response.stabilizedTrigs != "" %}
+                          Stabilized Triggers - {{response.stabilizedTrigs}}<br />
+                        {% endif %}
+                        {% if response.shortenedSpring != "" %}
+                          Shortened Spring - {{response.shortenedSpring}}<br />
+                        {% endif %}
+                        {% if response.removedSpring != "" %}
+                          Removed Spring - {{response.removedSpring}}<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-bl">
+                      <p>
+                        <span class="bold">Upgrades:</span><br>
+                        {% if response.fnT3Bundle != "" %}
+                          Factory New T3 Bundle<br />
+                        {% endif %}
+                        {% if response.fnLowFricTrigPotent != "" %}
+                          Factory New Low Friction Trigger Potentiometers<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPads != "" %}
+                          Factory New T3 Button Trigger Pads<br />
+                        {% endif %}
+                        {% if response.fnT3BtnTrigPieces != "" %}
+                          Factory New T3 Button Trigger Pieces<br />
+                        {% endif %}
+                        {% if response.upgradeNone != "" %}
+                          No Upgrades<br />
+                        {% endif %}
+                      </p>
+                    </div><br /><br />
+                    <div class="adminOrder-br">
+                      <p>
+                        <span class="bold">Shipping Information:</span><br>
+                        Handle - {{response.handle}}<br />
+                        Queue - {{response.queueSkip}}<br />
+                        {{response.firstLastName}}<br />
+                        {{response.streetAddress}}, {{response.city}}, {{response.state}} {{response.zipCode}} {{response.country}}<br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endblock %}
+      </ul>
+    <br />
+    <br />
+  </body>
+</html>

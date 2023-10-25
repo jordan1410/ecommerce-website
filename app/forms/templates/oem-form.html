@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../static/normalize.css" />
+    <link rel="stylesheet" href="../../static/styles.css" />
+    <title>OEM Order Form</title>
+  </head>
+
+  <body>
+    <div class="homepage-btn">
+      <a href="{{url_for('homeBP.index')}}"
+        ><p>
+          <img src="../../static/home/images/home-icon.png" alt="Home icon" />Homepage
+        </p></a
+      >
+    </div>
+    <div class="homepage-btn-mobile">
+      <a href="{{url_for('homeBP.index')}}">
+        <p>
+          <img src="../../static/home/images/home-icon.png" alt="Home icon"/>
+        </p>
+      </a>
+    </div>
+
+    {% block content %}
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+          <p class="{{ category }}">{{ msg }}</p>
+        {% endfor %}
+      {% endwith %}
+
+    <header class="form_box form_title">
+      <h1>Custom OEM Order Form (NOT PHOB)</h1>
+      <h2>
+        This is for CUSTOM OEMs ONLY. Please read carefully and use the price
+        guide linked on the homepage (necessary) to see explanations of
+        everything.
+      </h2>
+      <h2><span class="red-text bold">* Required</span></h2>
+    </header>
+
+    <form action="#" method="post">
+
+      {{ form.hidden_tag() }}
+
+      <!-- Handle -->
+      <div class="form_box">
+        <h3 class="title_box">
+          DM me to open a line of communication right before you submit!<br /><br />Twitter:
+          @'Twitter Handle'<br />
+          Discord: 'Discord Name'<br /><br />Write your Twitter or Discord
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.handle.errors %}
+          {% for error in form.handle.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.handle(class_="text_box", placeholder="Your handle") }}
+      </div>
+
+      <!-- Use Case -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Is this controller for Ultimate, Melee, or both?
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.useCase.errors %}
+          {% for error in form.useCase.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for use in form.useCase %}
+            {{ use }}
+            {{ use.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Front Shell -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Front Shell (see price guide for options / pricing)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.frontShell.errors %}
+          {% for error in form.frontShell.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.frontShell(class="text_box", placeholder="Enter front shell") }}
+      </div>
+
+      <!-- Front Shell Quality -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Front Shell Quality (price ranges shown are for this in price guide)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.frontShellQual.errors %}
+          {% for error in form.frontShellQual.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for frontQual in form.frontShellQual %}
+            {{ frontQual }}
+            {{ frontQual.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Back Shell -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Back Shell (see price guide for options / pricing)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.backShell.errors %}
+          {% for error in form.backShell.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.backShell(class="text_box", placeholder="Enter back shell") }}
+      </div>
+
+      <!-- Back Shell Quality -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Back Shell Quality (price ranges shown are for this in price guide)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.backShellQual.errors %}
+          {% for error in form.backShellQual.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for backQual in form.backShellQual %}
+            {{ backQual }}
+            {{ backQual.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Motherboard Choice -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Motherboard Choice <span class="red-text bold">*</span>
+        </h3>
+        {% if form.motherboard.errors %}
+          {% for error in form.motherboard.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for motherboard in form.motherboard %}
+            {{ motherboard }}
+            {{ motherboard.label }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Gray Stickbox Tier -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Gray Stickbox Tier <span class="red-text bold">*</span>
+        </h3>
+        {% if form.grayStickbox.errors %}
+          {% for error in form.grayStickbox.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for grayStick in form.grayStickbox %}
+            {{ grayStick }}
+            {{ grayStick.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- C Stickbox Tier -->
+      <div class="form_box">
+        <h3 class="title_box">
+          C Stickbox Tier <span class="red-text bold">*</span>
+        </h3>
+        {% if form.cStickbox.errors %}
+          {% for error in form.cStickbox.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for cStick in form.cStickbox %}
+            {{ cStick }}
+            {{ cStick.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Gray Stick Cap Tier -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Gray Stick Cap Tier (see price guide for examples)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.grayStickCap.errors %}
+          {% for error in form.grayStickCap.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for graySCap in form.grayStickCap %}
+            {{ graySCap }}
+            {{ graySCap.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- C Stick Cap Tier -->
+      <div class="form_box">
+        <h3 class="title_box">
+          C Stick Cap Tier <span class="red-text bold">*</span>
+        </h3>
+        {% if form.cStickCap.errors %}
+          {% for error in form.cStickCap.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for cSCap in form.cStickCap %}
+            {{ cSCap }}
+            {{ cSCap.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Upgrade -->
+      <div class="form_box">
+        <h3 class="title_box">Upgrades <span class="red-text bold">*</span></h3>
+        {% if form.upgrades.errors %}
+          {% for error in form.upgrades.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="checkbox_box">
+          {% for upgrade in form.upgrades %}
+            {{ upgrade }}
+            {{ upgrade.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Trigger Potentiometers -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Trigger Potentiometers <span class="red-text bold">*</span>
+        </h3>
+        {% if form.trigPotent.errors %}
+          {% for error in form.trigPotent.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for trigP in form.trigPotent %}
+            {{ trigP }}
+            {{ trigP.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Button/Trigger/Stick Color -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Button/Trigger/Stick Color <span class="red-text bold">*</span>
+        </h3>
+        {% if form.btnTrigStickColor.errors %}
+          {% for error in form.btnTrigStickColor.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for btsc in form.btnTrigStickColor %}
+            {{ btsc }}
+            {{ btsc.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Cord -->
+      <div class="form_box">
+        <h3 class="title_box">Cord <span class="red-text bold">*</span></h3>
+        {% if form.cord.errors %}
+          {% for error in form.cord.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for cordOpt in form.cord %}
+            {{ cordOpt }}
+            {{ cordOpt.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Notches -->
+      <div class="form_box">
+        <h3 class="title_box">Notches <span class="red-text bold">*</span></h3>
+        {% if form.notches.errors %}
+          {% for error in form.notches.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for notch in form.notches %}
+            {{ notch }}
+            {{ notch.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Button Mods -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Button Mods <span class="red-text bold">*</span>
+        </h3>
+        {% if form.buttonMods.errors %}
+          {% for error in form.buttonMods.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="checkbox_box">
+          {% for buttonMod in form.buttonMods %}
+            {{ buttonMod }}
+            {{ buttonMod.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Trigger Mods (price per trigger) -->
+      <div class="form_box">
+        <h3 class="title_box">Trigger Mods (price per trigger)</h3>
+          {% if form.shortPlug.errors %}
+            {% for error in form.shortPlug.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.longPlug.errors %}
+            {% for error in form.longPlug.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.digTrigUltimateMelee.errors %}
+            {% for error in form.digTrigUltimateMelee.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.digTrigUltimate.errors %}
+            {% for error in form.digTrigUltimate.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.stabilizedTrigs.errors %}
+            {% for error in form.stabilizedTrigs.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.shortenedSpring.errors %}
+            {% for error in form.shortenedSpring.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+          {% if form.removedSpring.errors %}
+            {% for error in form.removedSpring.errors %}
+              <div class="validationError">{{ error }}<br></div>
+            {% endfor %}
+          {% endif %}
+        <table class="form-table">
+          <thead>
+            <tr class="form-table-header">
+              <th class="form-first-col"></th>
+              <th>Left Trigger</th>
+              <th>Right Trigger</th>
+              <th>Both</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="form-table-row">
+              <th>Short Plug ($3)</th>
+              {% for sp in form.shortPlug %}
+                <td>
+                  {{ sp }}
+                </td>
+              {% endfor %}
+            </tr>
+            <tr class="form-table-row">
+              <th>Long Plug ($3)</th>
+              {% for lp in form.longPlug %}
+                <td>
+                  {{ lp }}
+                </td>
+              {% endfor %}
+            </tr>
+            <tr class="form-table-row">
+              <th>Digital Trigger Ultimate + Melee ($50)</th>
+              {% for digTUM in form.digTrigUltimateMelee %}
+                <td>
+                  {{ digTUM }}
+                </td>
+              {% endfor %}
+            </tr>
+            <tr class="form-table-row">
+              <th>Digital Trigger Ultimate ($30)</th>
+              {% for digTU in form.digTrigUltimate %}
+                <td>
+                  {{ digTU }}
+                </td>
+              {% endfor %}
+            </tr>
+            <tr class="form-table-row">
+              <th>Stabilized Trigger ($2)</th>
+              {% for stabTrig in form.stabilizedTrigs %}
+                <td>
+                  {{ stabTrig }}
+                </td>
+              {% endfor %}
+              </tr>
+            </tr>
+            <tr class="form-table-row">
+              <th>Shortened Spring (FREE)</th>
+              {% for shortenedS in form.shortenedSpring %}
+                <td>
+                  {{ shortenedS }}
+                </td>
+              {% endfor %}
+            </tr>
+            <tr class="form-table-row">
+              <th>Removed Spring (FREE)</th>
+              {% for removedS in form.removedSpring %}
+                <td>
+                  {{ removedS }}
+                </td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Rumble Modifications -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Rumble Modifications <span class="red-text bold">*</span>
+        </h3>
+        {% if form.rumbleMod.errors %}
+          {% for error in form.rumbleMod.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for rumble in form.rumbleMod %}
+            {{ rumble }}
+            {{ rumble.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Cord Plug Color -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Cord Plug Color (Not required for shell combos. You can pay for any
+          color if you wish but selection is required for people who mixed shell
+          colors. You get the cheaper color free, or you can pay for the higher
+          priced color.) <span class="red-text bold">*</span>
+        </h3>
+        {% if form.cordPlugColor.errors %}
+          {% for error in form.cordPlugColor.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for cordPC in form.cordPlugColor %}
+            {{ cordPC }}
+            {{ cordPC.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Queue Skip -->
+      <div class="form_box">
+        <h3 class="title_box">
+          QUEUE SKIP (if not shipped within time, your queue skip money back)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.queueSkip.errors %}
+          {% for error in form.queueSkip.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for qs in form.queueSkip %}
+            {{ qs }}
+            {{ qs.label }} <br>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- First and Last Name -->
+      <div class="form_box">
+        <h3 class="title_box">
+          First and Last Name <span class="red-text bold">*</span>
+        </h3>
+        {% if form.firstLastName.errors %}
+          {% for error in form.firstLastName.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.firstLastName(class_="text_box", placeholder="Enter your name") }}
+      </div>
+
+      <!-- Street Address -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Street Address (including unit, apt #, etc. if necessary)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.streetAddress.errors %}
+          {% for error in form.streetAddress.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.streetAddress(class_="text_box", placeholder="Enter your address") }}
+      </div>
+
+      <!-- City -->
+      <div class="form_box">
+        <h3 class="title_box">City <span class="red-text bold">*</span></h3>
+        {% if form.city.errors %}
+          {% for error in form.city.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.city(class_="text_box", placeholder="Enter your city") }}
+      </div>
+
+      <!-- State -->
+      <div class="form_box">
+        <h3 class="title_box">State <span class="red-text bold">*</span></h3>
+        {% if form.state.errors %}
+          {% for error in form.state.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.state(class_="text_box", placeholder="Enter your state") }}
+      </div>
+
+      <!-- Zip Code -->
+      <div class="form_box">
+        <h3 class="title_box">Zip Code <span class="red-text bold">*</span></h3>
+        {% if form.zipCode.errors %}
+          {% for error in form.zipCode.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.zipCode(class_="text_box", placeholder="Enter your zip code") }}
+      </div>
+
+      <!-- Country -->
+      <div class="form_box">
+        <h3 class="title_box">
+          Country (Only accepting US orders for now)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.country.errors %}
+          {% for error in form.country.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        {{ form.country(class_="text_box", placeholder="Enter your country") }}
+      </div>
+
+      <!-- Read Price Guide -->
+      <div class="form_box">
+        <h3 class="title_box">
+          I HAVE READ OVER THE PRICE GUIDE (found with link on homepage) AND
+          FULLY UNDERSTAND WHAT I AM PAYING FOR. I UNDERSTAND MY ORDER IS NOT
+          CONFIRMED UNTIL 'OWNER' HAS CONTACTED ME THROUGH DMS AND RECEIVED PAYMENT.
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.readPriceGuide.errors %}
+          {% for error in form.readPriceGuide.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for readPG in form.readPriceGuide %}
+            {{ readPG }}
+            {{ readPG.label }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Insurance Policy -->
+      <div class="form_box">
+        <h3 class="title_box">
+          INSURANCE POLICY: All unexpected damages are fully covered at no cost
+          to you. You will be charged nothing for the fix and fully reimbursed
+          for the shipping cost. Unexpected damages are things like:
+          <span class="red-text bold">*</span><br /><br />- Z button switch
+          stops working<br />- Phob board shorting<br />- Button getting jammed
+          etc.<br /><br />
+          All expected damages are not covered, these include:<br /><br />- PODE
+          (potentiometers degrading over time)<br />- Stickboxes, notches, and
+          stick caps wearing down over time<br /><br />These are unavoidable
+          phenomenon and can be fixed for a low cost, but are not covered for
+          free.
+        </h3>
+        {% if form.insurancePolicy.errors %}
+          {% for error in form.insurancePolicy.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for insuranceP in form.insurancePolicy %}
+            {{ insuranceP }}
+            {{ insuranceP.label }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- DM Gio -->
+      <div class="form_box">
+        <h3 class="title_box">
+          I will DM 'Owner' right now before hitting submit to open a line of
+          communication. (thank you! <3)
+          <span class="red-text bold">*</span>
+        </h3>
+        {% if form.dmGio.errors %}
+          {% for error in form.dmGio.errors %}
+            <div class="validationError">{{ error }}<br></div>
+          {% endfor %}
+        {% endif %}
+        <div class="radio_btns">
+          {% for dm in form.dmGio %}
+            {{ dm }}
+            {{ dm.label }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-submit">
+        {{ form.submit(class_="form-submit") }}
+      </div>
+
+    </form>
+
+    {% endblock %}
+
+    <footer class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Twitter: @'Twitter Handle'&emsp;&emsp;Discord: 'Discord Name'</p>
+    </footer>
+    <script src="../static/function.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1594 @@
+/* for all pages */
+/* ------------- */
+/* ------------- */
+
+body {
+    background-color: rgb(245, 230, 215);
+}
+
+* {
+    font-family: arial;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.red-text {
+    color: rgb(255, 0, 0);
+}
+
+.contact-info {
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+    font-size: .9em;
+}
+
+.contact-info p {
+    font-size: .90em;
+}
+
+.homepage-btn-mobile {
+    display: None;
+}
+
+.homepage-btn {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.homepage-btn a {
+    margin: 0px;
+}
+
+.homepage-btn p {
+    margin: 3px 30px 15px 22px;
+    padding: 15px 10px 15px 50px;
+    position: absolute;
+    float: left;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.homepage-btn p:hover {
+    background-color: rgb(231, 210, 194);
+    box-shadow: 10px;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.homepage-btn img {
+    height: 40px;
+    width: 40px;
+    left: 4px;
+    top: 5px;
+    position: absolute;
+}
+
+/* flash messages */
+.error {
+    margin: auto;
+    padding: 15px 10px 15px 10px;
+    width: 80%;
+    max-width: 1050px;
+    min-width: 500px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    background-color: rgb(255, 100, 100);
+    border: 5px solid red;
+    border-radius: 15px;
+}
+
+.message {
+    margin: 25px auto 35px auto;
+    padding: 10px;
+    width: 300px;
+    color: black;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(248, 231, 218);
+    border: 2px solid rgb(150, 120, 96);
+    border-radius: 15px;
+}
+
+.info {
+    margin: auto;
+    padding: 10px;
+    width: 350px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    background-color: rgb(255, 100, 100);
+    border: 3px solid red;
+    border-radius: 15px;
+}
+
+
+/* index page section */
+/* ------------------ */
+/* ------------------ */
+
+.adminLogin-btn {
+    text-align: right;
+    margin: 10px;
+}
+
+.adminLogin-btn img {
+    padding: 2px;
+    scale: .85;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.adminLogin-btn a p {
+    margin: 0px;
+}
+
+.adminLogin-btn img:hover {
+    background-color: rgb(231, 210, 194);
+    box-shadow: 10px;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+#face-index-image {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 110px;
+    width: 110px;
+    border-radius: 100%;
+    border: 2px solid rgb(150, 120, 96);
+}
+
+.index-header {
+    text-align: center;
+}
+
+.index-header h1 {
+    font-size: 1.25em;
+}
+
+.index-header p {
+    font-size: .9em;
+    margin-bottom: 30px;
+}
+
+.index-nav ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.index-nav li {
+    font-size: 1em;
+    max-width: 35%;
+    min-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1.3px solid rgb(150, 120, 96);
+    border-radius: 25px;
+    font-weight: 550;
+    background-color: rgb(231, 210, 194);
+}
+
+.index-nav li:hover {
+    background-color: rgb(226, 202, 183);
+    box-shadow: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.index-nav li a {
+    display: list-item;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* for price-guide.html */
+/* -------------------- */
+/* -------------------- */
+
+/* Header section */
+.pg-header {
+    text-align: center;
+    margin: auto auto 100px auto;
+}
+
+.pg-header h1 {
+    font-size: 2em;
+}
+
+.pg-section-header {
+    margin: 40px auto 150px auto;
+    text-align: center;
+}
+
+.pg-section-header h2 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 12.5px;
+    font-size: 1.5em;
+}
+
+.pg-section-header p {
+    font-size: 1em;
+    margin-top: 0px;
+}
+
+/* Table of contents section */
+.pg-table-content li {
+    width: 325px;
+    margin: 15px auto;
+}
+
+.pg-table-content li:hover {
+    background-color: rgb(231, 210, 194);
+    box-shadow: 10px;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.pg-table-content li a {
+    display: list-item;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 15px;
+    font-style: italic;
+}
+
+/* General section styling */
+.pg-sub-section {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.pg-ul-list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pg-ul-list li {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.pg-hr {
+    width: 95%;
+}
+
+/* Pre build section */
+.pg-pre-build-container {
+    grid-template-columns: 500px 300px;
+    grid-template-rows: 450px;
+    justify-content: center;
+    display: grid;
+    column-gap: 150px;
+    font-size: 1em;
+    text-align: left;
+}
+
+.pg-pre-build-container li {
+    text-align: left;
+}
+
+.pg-pre-built-child-left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.pg-pre-built-child-right {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+/* Custom Shell */
+.pg-custom-shell-pricing-container {
+    text-align: center;
+}
+
+.pg-custom-shell-pricing-child {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin: 10px 5% 10px 5%;
+}
+
+.pg-custom-shell-pricing-child li {
+    text-align: left;
+}
+
+/* Custom Selection */
+.pg-custom-selection-process {
+    margin: 10px 40px 10px 40px;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 300px 300px;
+    justify-content: center;
+    display: grid;
+    column-gap: 15px;
+    font-size: 1em;
+}
+
+.pg-custom-selection-process li {
+    margin-bottom: 10px;
+}
+
+.pg-grid-motherboard {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.pg-grid-necessary {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.pg-grid-stickboxes {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.pg-grid-notches {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.pg-grid-notches img {
+    height: 250px;
+    width: 250px;
+    border-radius: 35px;
+}
+
+.pg-grid-control-stick-cap {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.pg-grid-c-stick-cap {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.pg-grid-cords {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.pg-grid-btn-trig-color {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+/* Stick cap tier showcase section */
+.pg-stick-cap-tier-showcase h3 {
+    margin-bottom: 5px;
+    padding-right: 820px;
+    text-align: center;
+}
+
+.pg-stick-showcase-img {
+    width: 900px;
+}
+
+/* Mods section */
+.pg-mods-container {
+    grid-template-columns: 975px;
+    grid-template-rows: 350px;
+    justify-content: center;
+    display: grid;
+    font-size: 1em;
+    text-align: left;
+}
+
+.pg-mods-container li {
+    text-align: left;
+}
+
+.pg-mods-btn-mods-top {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.pg-mods-trigger-mods-bottom {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+
+/* Mod explanation section */
+.pg-mod-explanations {
+    text-align: center;
+}
+
+.pg-mod-explanations ul {
+    width: 75%;
+    display: inline-block;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.pg-mod-explanations li {
+    margin-bottom: 40px;
+}
+
+/* Upgrades section */
+.pg-upgrades {
+    text-align: center;
+}
+
+.pg-upgrades ul {
+    display: inline-block;
+    text-align: left;
+    width: 550px;
+}
+
+/* Upgrades explanations section */
+.pg-upgrade-explanations {
+    text-align: center;
+}
+
+.pg-upgrade-explanations ul {
+    width: 950px;
+    display: inline-block;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+/* FAQs section */
+.pg-faqs {
+    text-align: center;
+}
+
+.pg-faqs ol {
+    display: inline-block;
+    text-align: left;
+    width: 1100px;
+}
+
+.pg-faqs li {
+    margin-bottom: 15px;
+}
+
+/* Individual word styling section */
+.pg-phob {
+    background-color: rgb(0, 40, 255);
+    color: white;
+    margin: 1px 1px 1px 1px;
+    padding: 0 2px 0 2px;
+    border-radius: 4px;
+}
+
+.pg-indigo {
+    color: indigo;
+    font-weight: bold;
+}
+
+.pg-black {
+    color: black;
+    font-weight: bold;
+}
+
+.pg-platinum {
+    color: rgb(170, 170, 170);
+    font-weight: bold;
+}
+
+.pg-orange {
+    color: orange;
+    font-weight: bold;
+}
+
+.pg-fireball {
+    color: black;
+    font-weight: bold;
+}
+
+.pg-emerald {
+    color: rgb(18, 150, 157);
+    font-weight: bold;
+}
+
+.pg-jp-white {
+    background-color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.pg-smash-white {
+    background-color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.pg-mario {
+    color: red;
+    font-weight: bold;
+}
+
+.pg-luigi {
+    color: green;
+    font-weight: bold;
+}
+
+.pg-clear {
+    background-color: rgb(0, 161, 254);
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.pg-panasonic {
+    color: rgb(80, 80, 80);
+    font-weight: bold;
+}
+
+.pg-resident-evil {
+    background-color: rgb(174, 174, 174);
+    padding-left: 3px;
+    padding-right: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.pg-clubnintendo {
+    background-color: red;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.pg-wario {
+    background-color: yellow;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: rgb(156, 0, 156);
+    font-weight: bold;
+}
+
+.pg-pink {
+    color: rgb(255, 0, 220);
+    font-weight: bold;
+}
+
+.pg-wavedash {
+    font-weight: bold;
+    color: rgb(49, 167, 221);
+}
+
+.pg-firefox {
+    font-weight: bold;
+    color: rgb(226, 112, 19);
+}
+
+
+
+/* Customer order form section */
+/* --------------------------- */
+/* --------------------------- */
+
+.form_box {
+    border: 1px solid black;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+
+    background-color: white;
+
+    padding: 15px;
+    max-width: 850px;
+    min-width: 500px;
+
+    margin: 15px auto;
+}
+
+.title_box {
+    display: inline-block;
+
+    margin: 10px;
+    padding: 10px;
+
+    font-size: .9em;
+    font-weight: normal;
+}
+
+.form_title h1 {
+    margin: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.form_title h2 {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.text_box {
+    font-size: .8em;
+    padding: 5px;
+    margin: 20px;
+    width: 92%;
+
+    border: none;
+    border-bottom: 1px solid black;
+
+    outline-style: none;
+}
+
+.radio_btns {
+    margin: 10px;
+    padding: 5px;
+}
+
+.radio_btns input {
+    margin: 10px 10px 25px 10px;
+    scale: 1.75;
+}
+
+.radio_btns label {
+    font-size: .8em;
+}
+
+.checkbox_box {
+    margin: 10px;
+    padding: 5px;
+}
+
+.checkbox_box input {
+    margin: 10px;
+    scale: 1.75;
+
+    position: absolute;
+}
+
+.checkbox_box label {
+    margin: 9px 10px 10px 0px;
+    font-size: .8em;
+
+    padding-bottom: 15px;
+    padding-left: 40px;
+    display: inline-block;
+}
+
+.form-table {
+    table-layout: fixed;
+    width: 100%;
+    margin: 20px;
+}
+
+.form-table-header th {
+    font-weight: normal;
+}
+
+.form-table-row {
+    line-height: 50px;
+}
+
+.form-table-row th {
+    font-weight: normal;
+}
+
+.form-table-row td input {
+    scale: 1.75;
+}
+
+.form-table-row th {
+    text-align: left;
+}
+
+.form-table-row td {
+    text-align: center;
+}
+
+.form-first-col {
+    width: 275px;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 710px;
+}
+
+.form-submit input {
+    background-color: rgb(9, 181, 238);
+    border: none;
+    color: #fff;
+    padding: 10px 35px;
+    text-decoration: none;
+    margin: auto;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 15px;
+}
+
+.form-submit input:hover {
+    transform: scale(1.04);
+    transition: .1s;
+}
+
+
+/* for confirmation.html */
+/* --------------------- */
+/* --------------------- */
+
+.order-confirm-header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.order-confirm-header p {
+    font-size: 1em;
+}
+
+.order-confirm-body {
+    padding: 10px 25px 10px 25px;
+    display: grid;
+    font-size: 1em;
+    justify-content: space-evenly;
+    column-gap: 15px;
+}
+
+/* t:top, m:middle, b:bottom, l:left, r:right */
+.order-confirm-color {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.order-confirm-genUpgrades {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.order-confirm-trigger {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.order-confirm-button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.order-confirm-upgrades {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.order-confirm-shipping {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+/* for admin-login.html */
+/* -------------------- */
+/* -------------------- */
+
+.adminLogin {
+    text-align: center;
+}
+
+.adminLogin h1 {
+    margin-bottom: 100px;
+}
+
+.adminLogin form {
+    font-size: 1em;
+}
+
+.adminLogin input {
+    font-size: 1em;
+}
+
+.validationError {
+    margin: auto auto 20px auto;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: .85em;
+    color: black;
+    background-color: rgb(255, 100, 100);
+    border: 3px solid red;
+    border-radius: 15px;
+}
+
+/* for admin-home.html */
+/* ------------------- */
+/* ------------------- */
+
+.adminHome {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.adminLogout-btn p {
+    margin: 3px 30px 15px 22px;
+    padding: 8px;
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.adminLogout-btn p:hover {
+    background-color: rgb(231, 210, 194);
+    box-shadow: 10px;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.adminHome-nav ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.adminHome-nav li {
+    font-size: 1em;
+    max-width: 35%;
+    min-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1.3px solid rgb(150, 120, 96);
+    border-radius: 25px;
+    font-weight: 550;
+    background-color: rgb(231, 210, 194);
+}
+
+.adminHome-nav li:hover {
+    background-color: rgb(226, 202, 183);
+    box-shadow: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.adminHome-nav li a {
+    display: list-item;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* for admin order pages (pending, confirmed, etc.) */
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
+
+.adminHome-btn p {
+    left: 25px;
+    top: 25px;
+    padding: 15px 10px 15px 10px;
+    position: absolute;
+    float: left;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.adminHome-btn p:hover {
+    background-color: rgb(231, 210, 194);
+    box-shadow: 10px;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+.adminOrder-header {
+    margin-top: 50px;
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+.adminOrder-collapse {
+    margin: 60px auto;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.adminOrder-collapse li {
+    list-style: none;
+    width: 100%;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #e3edf7;
+}
+
+.adminOrder-collapse li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.adminOrder-collapse li label::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.adminOrder-collapse li input[type="checkbox"] {
+    display: none;
+}
+
+.adminOrder-collapse .collapseContent {
+    color: black;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s, padding 0.5s;
+}
+
+.adminOrder-collapse input[type="checkbox"]:checked+label+.collapseContent {
+    max-height: 3000px;
+    padding: 10px;
+}
+
+.adminOrder-grid {
+    padding: 10px 25px 10px 25px;
+    display: grid;
+    column-gap: 50px;
+    font-size: 1em;
+}
+
+/* t:top, m:middle, b:bottom, l:left, r:right */
+.adminOrder-tl {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.adminOrder-tr {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.adminOrder-ml {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.adminOrder-mr {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.adminOrder-bl {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.adminOrder-br {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+@media screen and (max-width: 1350px) {
+
+    * {
+        font-size: 18px;
+    }
+
+    /* for price-guide.html */
+    /* -------------------- */
+    /* -------------------- */
+
+    /* Pre build section */
+    .pg-pre-build-container {
+        grid-template-columns: 375px 250px;
+        grid-template-rows: 400px;
+        column-gap: 20px;
+    }
+
+    /* Custom Shell */
+    .pg-custom-selection-process {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: none;
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+
+    .pg-grid-motherboard {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .pg-grid-stickboxes {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .pg-grid-notches {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    .pg-grid-cords {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .pg-grid-btn-trig-color {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    /* Stick cap tier showcase section */
+    .pg-stick-cap-tier-showcase h3 {
+        padding-right: 73%;
+    }
+
+    .pg-stick-showcase-img {
+        width: 80%;
+    }
+
+    /* Mods section */
+    .pg-mods-container {
+        grid-template-columns: 80%;
+    }
+
+    /* Mod explanation section */
+    .pg-mod-explanations ul {
+        width: 90%;
+    }
+
+    /* Upgrades section */
+    .pg-upgrades ul {
+        width: 85%;
+    }
+
+    .pg-upgrades li {
+        margin-bottom: 20px;
+    }
+
+    /* Upgrades explanations section */
+    .pg-upgrade-explanations ul {
+        width: 85%;
+    }
+
+    .pg-upgrade-explanations li {
+        margin-bottom: 20px;
+    }
+
+    /* FAQs section */
+    .pg-faqs ol {
+        width: 85%;
+    }
+
+
+    /* for confirmation.html */
+    /* --------------------- */
+    /* --------------------- */
+    .order-confirm-body {
+        column-gap: 35px;
+    }
+
+
+    /* for admin order pages (pending, confirmed, etc.) */
+    /* ------------------------------------------------ */
+    /* ------------------------------------------------ */
+
+    .adminOrder-collapse {
+        width: 95%;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    * {
+        font-size: 15px;
+    }
+
+    .homepage-btn {
+        display: none;
+    }
+
+    .homepage-btn-mobile {
+        display: flex;
+        margin-bottom: 50px;
+    }
+
+    .homepage-btn-mobile p {
+        margin: 0px;
+        padding: 20px;
+        position: absolute;
+        float: left;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .homepage-btn-mobile img {
+        height: 30px;
+        width: 30px;
+        left: 5px;
+        top: 5px;
+        position: absolute;
+    }
+
+    .adminLogin-btn img {
+        scale: .60;
+    }
+
+
+    /* index page section */
+    /* ------------------ */
+    /* ------------------ */
+    .index-nav li {
+        min-width: 80%;
+        padding: 10px;
+    }
+
+
+    /* for price-guide.html */
+    /* -------------------- */
+    /* -------------------- */
+
+    /* Pre build section */
+    .pg-pre-build-container {
+        margin: auto;
+        grid-template-columns: 90%;
+        grid-template-rows: 400px;
+        column-gap: 0px;
+    }
+
+    .pg-pre-built-child-right {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+    }
+
+    /* Custom Selection */
+    .pg-custom-selection-process {
+        grid-template-columns: 95%;
+        grid-template-rows: none;
+        column-gap: none;
+        row-gap: 25px;
+    }
+
+    .pg-grid-motherboard {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .pg-grid-stickboxes {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+
+    .pg-grid-notches {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 8;
+        grid-row-end: 9;
+    }
+
+    .pg-grid-notches img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .pg-grid-control-stick-cap {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    .pg-grid-c-stick-cap {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .pg-grid-cords {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .pg-grid-btn-trig-color {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+        grid-row-end: 8;
+    }
+
+
+    /* Stick cap tier showcase section */
+    .pg-stick-cap-tier-showcase h3 {
+        padding-right: 75%;
+        font-size: .8em;
+    }
+
+    .pg-stick-showcase-img {
+        width: 85%;
+    }
+
+    /* Mods section */
+    .pg-mods-container {
+        grid-template-columns: 95%;
+        grid-template-rows: 325px;
+    }
+
+    /* Upgrades section */
+    .pg-upgrades ul {
+        width: 95%;
+    }
+
+    .pg-upgrades li {
+        margin-bottom: 20px;
+    }
+
+    /* Upgrades explanations section */
+    .pg-upgrade-explanations ul {
+        width: 95%;
+    }
+
+    .pg-upgrade-explanations li {
+        margin-bottom: 20px;
+    }
+
+    /* FAQs section */
+    .pg-faqs ol {
+        width: 98%;
+    }
+
+
+    /* Customer order form section */
+    /* --------------------------- */
+    /* --------------------------- */
+    .form_box {
+        padding: 1px;
+        min-width: 95%;
+    }
+
+    .title_box {
+        margin: 3px;
+        padding-bottom: 5px;
+    }
+
+    .form_title h2 {
+        margin: 3px;
+    }
+
+    .text_box {
+        margin: 15px;
+        width: 92%;
+    }
+
+    .radio_btns {
+        margin: 5px;
+    }
+
+    .radio_btns input {
+        margin: 0px;
+        margin-left: 10px;
+        scale: 1.25;
+        float: left;
+    }
+
+    .radio_btns label {
+        margin: 1px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        padding-left: 40px;
+        display: block;
+    }
+
+    .checkbox_box {
+        margin: 5px;
+    }
+
+    .checkbox_box input {
+        scale: 1.25;
+    }
+
+    .checkbox_box label {
+        margin: 9px 10px 5px 0px;
+        padding-bottom: 5px;
+    }
+
+    .form-table {
+        margin: 10px;
+    }
+
+    .form-table-header th {
+        font-size: .8em;
+    }
+
+    .form-table-row {
+        line-height: 35px;
+    }
+
+    .form-table-row th {
+        font-size: .8em;
+    }
+
+    .form-table-row td input {
+        scale: 1.25;
+    }
+
+    .form-first-col {
+        width: 160px;
+    }
+
+    .form-submit {
+        margin-right: 745px;
+    }
+
+
+    /* for confirmation.html */
+    /* --------------------- */
+    /* --------------------- */
+
+    .order-confirm-genUpgrades {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .order-confirm-trigger {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .order-confirm-button {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    .order-confirm-upgrades {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+
+    .order-confirm-shipping {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+        grid-row-end: 8;
+    }
+
+
+    /* for admin-home.html */
+    /* ------------------- */
+    /* ------------------- */
+
+    .adminLogout-btn p {
+        margin: 0px;
+        float: right;
+        display: flex;
+        top: 7px;
+        right: 7px;
+        font-size: 1em;
+    }
+
+    .adminLogout-btn p:hover {
+        background-color: white;
+        transform: none;
+        transition: none;
+    }
+
+    .adminHome-nav li {
+        min-width: 80%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+
+    /* for admin order pages (pending, confirmed, etc.) */
+    /* ------------------------------------------------ */
+    /* ------------------------------------------------ */
+
+    .adminHome-btn {
+        margin-bottom: 75px;
+    }
+
+    .adminHome-btn p {
+        margin: 0px;
+        padding: 8px;
+        float: none;
+        display: inline-block;
+        top: 7px;
+        left: 7px;
+        font-size: 1em;
+
+    }
+
+    .adminHome-btn p:hover {
+        background-color: white;
+        transform: none;
+        transition: none;
+    }
+
+    .adminOrder-collapse {
+        width: 100%;
+        min-width: 300px;
+    }
+
+    .adminOrder-collapse li label {
+        margin-right: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .adminOrder-collapse li label::before {
+        content: '';
+        margin-right: 0px;
+    }
+
+    .adminOrder-collapse li input {
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .adminOrder-tr {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .adminOrder-ml {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .adminOrder-mr {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .adminOrder-bl {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    .adminOrder-br {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+
+}

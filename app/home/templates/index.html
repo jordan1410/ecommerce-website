@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../static/normalize.css">
+    <link rel="stylesheet" href="../../static/styles.css" />
+    <title>E-Commerce App</title>
+  </head>
+
+  <body>
+    <div class="adminLogin-btn">
+      <a href="{{url_for('adminBP.adminHome')}}"
+        ><p>
+          <img src="../../static/home/images/admin-icon.png" alt="Admin icon" />
+        </p></a
+      >
+    </div>
+
+    {% block content %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+          <p class="{{ category }}">{{ msg }}</p>
+        {% endfor %}
+      {% endwith %}
+    {% endblock %}
+    
+    <img
+      src="../../static/home/images/home-face.jpg"
+      alt="Face Image"
+      id="face-index-image"
+    />
+    <div class="index-header">
+      <h1>@'Social Media Handle'</h1>
+      <p>'Owner Description/Statement'</p>
+    </div>
+    <nav class="index-nav">
+      <ul>
+        <li><a href="{{url_for('homeBP.priceGuide')}}">Price Guide</a></li>
+        <li><a href="{{url_for('formsBP.phobForm')}}">Custom Phob Order Form</a></li>
+        <li><a href="{{url_for('formsBP.oemForm')}}">Custom OEM Order Form</a></li>
+        <li><a href="{{url_for('formsBP.nine9Form')}}">$99 Controller Order Form</a></li>
+        <li><a href="{{url_for('formsBP.one69Form')}}">$169 Controller Order Form</a></li>
+      </ul>
+    </nav>
+    <footer class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Twitter: @'Twitter Handle'&emsp;&emsp;Discord: 'Discord Name'</p>
+    </footer>
+  </body>
+</html>

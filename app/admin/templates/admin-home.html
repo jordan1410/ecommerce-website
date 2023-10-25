@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="stylesheet" href="../../static/normalize.css" />
+    <link rel="stylesheet" href="../../static/styles.css" />
+    <title>Admin Homepage</title>
+  </head>
+  <body>
+    <div class="homepage-btn">
+        <a href="{{url_for('homeBP.index')}}"
+          ><p>
+            <img src="../../static/home/images/home-icon.png" alt="Home icon" />Homepage
+          </p></a
+        >
+      </div>
+      <div class="homepage-btn-mobile">
+        <a href="{{url_for('homeBP.index')}}">
+          <p>
+            <img src="../../static/home/images/home-icon.png" alt="Home icon"/>
+          </p>
+        </a>
+      </div>
+    <div class="adminLogout-btn">
+      <a href="{{url_for('adminBP.adminLogout')}}"
+        ><p>
+          Logout
+        </p></a
+      >
+    </div>
+
+    {% block content %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+          <p class="{{ category }}">{{ msg }}</p>
+        {% endfor %}
+      {% endwith %}
+    {% endblock %}
+
+    <div class="adminHome">
+      <h1>Admin Homepage</h1>
+      <br><br><br><br><br>
+      <nav class="adminHome-nav">
+        <ul>
+          <li><a href="{{url_for('adminBP.pendingOrders')}}">Pending Orders</a></li>
+          <li><a href="{{url_for('adminBP.confirmedOrders')}}">Confirmed Orders</a></li>
+          <li><a href="{{url_for('adminBP.employeeOrders')}}">Employee Orders</a></li>
+          <li><a href="{{url_for('adminBP.completedOrders')}}">Completed Orders</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
